@@ -1,4 +1,4 @@
-package com.vignette.itt.dega.config;
+package com.vignette.eis.mega.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

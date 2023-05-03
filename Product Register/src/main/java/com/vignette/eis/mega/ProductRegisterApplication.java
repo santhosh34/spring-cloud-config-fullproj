@@ -1,4 +1,4 @@
-package com.vignette.itt.dega;
+package com.vignette.eis.mega;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

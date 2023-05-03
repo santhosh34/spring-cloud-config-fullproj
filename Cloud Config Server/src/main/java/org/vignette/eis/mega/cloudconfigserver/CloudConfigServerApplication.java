@@ -1,4 +1,4 @@
-package org.vignette.itt.dega.cloudconfigserver;
+package org.vignette.eis.mega.cloudconfigserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

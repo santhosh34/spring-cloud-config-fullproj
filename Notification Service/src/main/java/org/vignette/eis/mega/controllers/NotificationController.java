@@ -1,4 +1,4 @@
-package org.vignette.itt.dega.controllers;
+package org.vignette.eis.mega.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
