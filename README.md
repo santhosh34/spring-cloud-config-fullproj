@@ -8,10 +8,13 @@ Step1:
 
 Step2: 
 Product Register On:            localhost:8081
-        This will fail to fetch if no search string in server config params
-
+        
+        *Run with Profile: dev
     search-paths:
         - '{application}{profile}'
+
+This will fail to fetch if no search string in server config params
+
 
 Step3: 
 Notification Server On:         localhost:8082

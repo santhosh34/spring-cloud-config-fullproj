@@ -13,7 +13,7 @@ public class NotificationController {
     @Value("${cost}")
     private String cost;
 
-    @GetMapping("/getProductDetails")
+    @GetMapping("/products/{id}")
     public String getSth(){
         return "{"+this.model+":"+this.cost+"}";
     }
