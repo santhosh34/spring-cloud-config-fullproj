@@ -23,3 +23,7 @@ Notification Server On:         localhost:8082
 
 Local IDE Setup:
 ![IDE Config](./README_DOCs/ide_settings.png)
+
+```debug
+-Dspring.profiles.active=dev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+```
