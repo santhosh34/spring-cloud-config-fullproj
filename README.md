@@ -19,3 +19,7 @@ This will fail to fetch if no search string in server config params
 Step3: 
 Notification Server On:         localhost:8082
 
+
+
+Local IDE Setup:
+![IDE Config](./README_DOCs/ide_settings.png)
