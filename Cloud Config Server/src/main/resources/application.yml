@@ -8,3 +8,4 @@ spring:
       server:
         git:
           uri: https://github.com/santhosh34/spring-cloud-config-store.git
+          searchPaths: '{application}/{profile}'
