@@ -11,14 +11,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>org.vignette</groupId>
+    <groupId>org.sannette</groupId>
     <artifactId>spring-cloud-config</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Cloud Config Server</module>
-        <module>Product Register</module>
-        <module>Notification Service</module>
+        <module>CloudConfigServer</module>
+        <module>NotificationService</module>
+        <module>ProductRegister</module>
     </modules>
 
     <properties>
@@ -28,8 +28,6 @@
         <spring-cloud.version>2022.0.2</spring-cloud.version>
     </properties>
     <dependencies>
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

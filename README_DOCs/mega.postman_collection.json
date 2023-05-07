@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "96718bac-8540-468e-b365-112c8e3888fa",
+		"name": "MegaV2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "646169"
+	},
+	"item": [
+		{
+			"name": "Config Server With Cloudbus",
+			"item": [
+				{
+					"name": "1. Notification Service Config from Server",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/notification-service/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"notification-service",
+								"dev"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Product Register Service Config from Server",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/productregister/dev",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"productregister",
+								"dev"
+							],
+							"query": [
+								{
+									"key": "Wont Work As search paths are not avaiable in server yml",
+									"value": "searchPaths: '{application}/{profile}'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Config from Client - Notification Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/notification-service/properties/host",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"notification-service",
+								"properties",
+								"host"
+							],
+							"query": [
+								{
+									"key": "Wont Work As search paths are not avaiable in server yml",
+									"value": "searchPaths: '{application}/{profile}'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Config from Client - Product Register Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/product-register/properties/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product-register",
+								"properties",
+								"model"
+							],
+							"query": [
+								{
+									"key": "Wont Work As search paths are not avaiable in server yml",
+									"value": "searchPaths: '{application}/{profile}'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Config Refresh from Server Using Bus Refresh Endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/actuator/busrefresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"actuator",
+								"busrefresh"
+							],
+							"query": [
+								{
+									"key": "Wont Work As search paths are not avaiable in server yml",
+									"value": "searchPaths: '{application}/{profile}'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Get Config from Client - Notification Service After Refresh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/notification-service/properties/host",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"notification-service",
+								"properties",
+								"host"
+							],
+							"query": [
+								{
+									"key": "Wont Work As search paths are not avaiable in server yml",
+									"value": "searchPaths: '{application}/{profile}'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Get Config from Client - Product Register Service After Refresh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/product-register/properties/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product-register",
+								"properties",
+								"model"
+							],
+							"query": [
+								{
+									"key": "Wont Work As search paths are not avaiable in server yml",
+									"value": "searchPaths: '{application}/{profile}'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
