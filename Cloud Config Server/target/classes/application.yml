@@ -11,7 +11,7 @@ spring:
     bus:
       enabled:  true
       id: my-config-server
-      destination: myownmanuallycreatedtopic1
+      destination: myownmanuallycreatedtopic
     stream:
       kafka:
         binder:
@@ -23,8 +23,8 @@ spring:
               auto:
                 create:
                   topics: false
-  logging:
-    level:
-      root: WARN
-      com.vignette.eis.mega.*: WARN
-      org.apache.kafka.*: WARN
+logging:
+  level:
+    ROOT: ERROR
+    com.vignette.eis.mega.*: INFO
+    org.apache.kafka.*: INFO
