@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @RefreshScope
 public class ProductConfig {
+    @Value("${name}")
+    private String name;
+    @Value("${category}")
+    private String category;
     @Value("${model}")
     private String model;
     @Value("${cost}")

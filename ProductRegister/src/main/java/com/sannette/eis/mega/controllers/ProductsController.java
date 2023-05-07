@@ -7,20 +7,19 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/product-register")
-public class GamesOrgController {
-
-//        @Value("${model}")
-//        private String model;
-//
-//        @Value("${cost}")
-//        private String cost;
+public class ProductsController {
 
         @Autowired
         private ProductConfig productConfig;
 
-        @GetMapping("/{propertyName}")
+        @GetMapping("/properties")
         public Mono<String> getConfigurationProp(@PathVariable String propertyName){
-                  return Mono.just("{"+productConfig.getModel()+":"+ productConfig.getCost()+"}");
+                  return Mono.just(productConfig);
+        }
+
+        @GetMapping("/properties/{propertyName}")
+        public Mono<String> getConfigurationProp(@PathVariable String propertyName){
+                return Mono.just(productConfig);
         }
 
 
