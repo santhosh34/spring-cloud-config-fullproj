@@ -1,4 +1,4 @@
-package com.vignette.eis.mega;
+package com.sannette.eis.mega;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

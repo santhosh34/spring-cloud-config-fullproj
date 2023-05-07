@@ -1,4 +1,4 @@
-package com.vignette.eis.mega.controllers;
+package com.sannette.eis.mega.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

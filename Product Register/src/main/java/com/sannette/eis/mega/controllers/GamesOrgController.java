@@ -1,6 +1,6 @@
-package com.vignette.eis.mega.controllers;
+package com.sannette.eis.mega.controllers;
 
-import com.vignette.eis.mega.config.ProductConfig;
+import com.sannette.eis.mega.config.ProductConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
