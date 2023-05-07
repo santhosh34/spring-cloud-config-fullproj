@@ -11,3 +11,11 @@ spring:
   logging:
     level:
       root: INFO
+management:
+  endpoints:
+    web:
+      exposure:
+        include:  health, busrefresh, bus-env, refresh, env
+  endpoint:
+    info:
+      enabled: true
