@@ -27,3 +27,12 @@ Local IDE Setup:
 ```debug
 -Dspring.profiles.active=dev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
 ```
+
+
+Configure a local docker kafka and execute the following command to create a topic manually
+Follow this ![README](./KafkaDockerCompose/README.md) Instructions
+
+```shell
+docker exec kafka kafka-topics --create --bootstrap-server kafka:29092 --topic myownmanuallycreatedtopic 
+```
+
