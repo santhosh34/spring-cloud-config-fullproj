@@ -1,22 +1,25 @@
 package com.sannette.eis.mega.controllers;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import com.sannette.eis.mega.config.NotificationConfig;
+import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+import java.lang.reflect.InvocationTargetException;
 
 @RestController
-@RefreshScope
+@RequestMapping("/notification-service")
 public class NotificationController {
 
-    @Value("${model}")
-    private String model;
+    @Autowired
+    private NotificationConfig  notificationConfig;
 
-    @Value("${cost}")
-    private String cost;
-
-    @GetMapping("/products/{id}")
-    public String getSth(){
-        return "{"+this.model+":"+this.cost+"}";
+    @GetMapping("/properties/{propertyName}")
+    public Mono<String> getAProperty(@PathVariable String propertyName) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException{
+        return Mono.just((String) PropertyUtils.getProperty(notificationConfig, propertyName));
     }
 }
