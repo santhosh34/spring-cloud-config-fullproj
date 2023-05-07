@@ -8,4 +8,23 @@ spring:
       server:
         git:
           uri: https://github.com/santhosh34/spring-cloud-config-store.git
-          searchPaths: '{application}/{profile}'
+    bus:
+      enabled:  true
+      id: my-config-server
+      destination: myownmanuallycreatedtopic1
+    stream:
+      kafka:
+        binder:
+          autoCreateTopics: false
+          zkNodes:  localhost:2181
+          brokers: localhost:29092
+          consumer-properties:
+            allow:
+              auto:
+                create:
+                  topics: false
+  logging:
+    level:
+      root: WARN
+      com.vignette.eis.mega.*: WARN
+      org.apache.kafka.*: WARN
