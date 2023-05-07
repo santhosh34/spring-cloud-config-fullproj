@@ -13,12 +13,12 @@ public class ProductsController {
         private ProductConfig productConfig;
 
         @GetMapping("/properties")
-        public Mono<String> getConfigurationProp(@PathVariable String propertyName){
+        public Mono<ProductConfig> getProperties(@PathVariable String propertyName){
                   return Mono.just(productConfig);
         }
 
         @GetMapping("/properties/{propertyName}")
-        public Mono<String> getConfigurationProp(@PathVariable String propertyName){
+        public Mono<ProductConfig> getAProperty(@PathVariable String propertyName){
                 return Mono.just(productConfig);
         }
 

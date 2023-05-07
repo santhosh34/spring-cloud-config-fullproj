@@ -1,24 +1,22 @@
 server:
-  port: 8888
+  port: 8081
+
 spring:
   application:
-    name: config-server
+    name: notification-service
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://localhost:8888
   cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/santhosh34/spring-cloud-config-store.git
-          search-paths:
-            - '{application}/{profile}'
     bus:
-      enabled:  true
-      id: my-config-server
+      enabled: true
       destination: myownmanuallycreatedtopic
     stream:
       kafka:
         binder:
           autoCreateTopics: false
-          zkNodes:  localhost:2181
+          zkNodes: localhost:2181
           brokers: localhost:29092
           consumer-properties:
             allow:

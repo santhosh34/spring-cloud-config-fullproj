@@ -8,6 +8,8 @@ spring:
       server:
         git:
           uri: https://github.com/santhosh34/spring-cloud-config-store.git
+          search-paths:
+            - '{application}/{profile}'
     bus:
       enabled:  true
       id: my-config-server
