@@ -11,6 +11,16 @@ spring:
   logging:
     level:
       root: INFO
+  cloud:
+    bus:
+      enabled: true
+      destination: myownmanuallycreatedtopic
+    stream:
+      kafka:
+        binder:
+          autoCreateTopics: false
+          zkNodes: localhost:2181
+          brokers: localhost:29092
 management:
   endpoints:
     web:
