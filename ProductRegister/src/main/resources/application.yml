@@ -8,9 +8,6 @@ spring:
     active: dev
   config:
     import: configserver:http://localhost:8888
-  logging:
-    level:
-      root: INFO
   cloud:
     bus:
       enabled: true
@@ -29,3 +26,8 @@ management:
   endpoint:
     info:
       enabled: true
+logging:
+  level:
+    ROOT: ERROR
+    com.sannette.eis.mega.*: INFO
+    org.apache.kafka.*: INFO

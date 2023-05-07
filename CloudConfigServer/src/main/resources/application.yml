@@ -26,5 +26,5 @@ spring:
 logging:
   level:
     ROOT: ERROR
-    com.vignette.eis.mega.*: INFO
+    com.sannette.eis.mega.*: INFO
     org.apache.kafka.*: INFO
