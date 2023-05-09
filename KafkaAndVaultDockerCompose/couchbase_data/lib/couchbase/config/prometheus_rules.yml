@@ -1,8 +1,0 @@
-groups:
-  - interval: '10s'
-    name: 'general'
-    rules:
-      - expr: '1 - (kv_dcp_items_remaining{connection_type=`replication`} / ignoring(name) irate(kv_dcp_items_sent{connection_type=`replication`}[30s]) > bool 1) * (max_over_time((kv_dcp_items_remaining{connection_type=`replication`} / ignoring(name) irate(kv_dcp_items_sent{connection_type=`replication`}[30s]))[60s:10s]) > bool 2)'
-        labels:
-          name: 'cm_failover_safeness_level'
-        record: 'cm_failover_safeness_level'
