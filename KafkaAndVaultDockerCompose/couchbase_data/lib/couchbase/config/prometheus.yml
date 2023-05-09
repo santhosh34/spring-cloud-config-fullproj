@@ -1,0 +1,213 @@
+global:
+  scrape_interval: '10s'
+  scrape_timeout: '10s'
+rule_files:
+  - '/opt/couchbase/var/lib/couchbase/config/prometheus_rules.yml'
+scrape_configs:
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'general'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetrics'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:8091'
+        replacement: 'ns_server'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:9998'
+        replacement: 'xdcr'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:8097'
+        replacement: 'backup'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:8095'
+        replacement: 'cbas'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:8096'
+        replacement: 'eventing'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:8094'
+        replacement: 'fts'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:9102'
+        replacement: 'index'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:11280'
+        replacement: 'kv'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+      - regex: '127\.0\.0\.1:8093'
+        replacement: 'n1ql'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    static_configs:
+      - targets:
+          - '127.0.0.1:8091'
+          - '127.0.0.1:9998'
+          - '127.0.0.1:8097'
+          - '127.0.0.1:8095'
+          - '127.0.0.1:8096'
+          - '127.0.0.1:8094'
+          - '127.0.0.1:9102'
+          - '127.0.0.1:11280'
+          - '127.0.0.1:8093'
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'ns_server_high_cardinality'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetricsHigh'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:8091'
+        replacement: 'ns_server'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    scrape_interval: '60s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - '127.0.0.1:8091'
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'index_high_cardinality'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetricsHigh'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:9102'
+        replacement: 'index'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - '127.0.0.1:9102'
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'fts_high_cardinality'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetricsHigh'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:8094'
+        replacement: 'fts'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - '127.0.0.1:8094'
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'kv_high_cardinality'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetricsHigh'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:11280'
+        replacement: 'kv'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - '127.0.0.1:11280'
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'cbas_high_cardinality'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetricsHigh'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:8095'
+        replacement: 'cbas'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - '127.0.0.1:8095'
+  - basic_auth:
+      password_file: '/opt/couchbase/var/lib/couchbase/config/prometheus_token'
+      username: '@prometheus'
+    job_name: 'eventing_high_cardinality'
+    metric_relabel_configs:
+      - source_labels:
+          - '__name__'
+        target_label: 'name'
+    metrics_path: '/_prometheusMetricsHigh'
+    params:
+      timeout:
+        - '10000'
+    relabel_configs:
+      - regex: '127\.0\.0\.1:8096'
+        replacement: 'eventing'
+        source_labels:
+          - '__address__'
+        target_label: 'instance'
+    scrape_interval: '10s'
+    scrape_timeout: '10s'
+    static_configs:
+      - targets:
+          - '127.0.0.1:8096'

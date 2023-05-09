@@ -1,0 +1,99 @@
+{
+  "active_external_users_push_interval": 600,
+  "admin": "@ns_server",
+  "audit_file": "/opt/couchbase/var/lib/couchbase/config/audit.json",
+  "breakpad": {
+    "enabled": true,
+    "minidump_dir": "/opt/couchbase/var/lib/couchbase/crash"
+  },
+  "client_cert_auth": {
+    "state": "disable",
+    "prefixes": []
+  },
+  "collections_enabled": true,
+  "connection_idle_time": 0,
+  "datatype_snappy": true,
+  "dedupe_nmvb_maps": false,
+  "enforce_tenant_limits_enabled": false,
+  "external_auth_service": false,
+  "interfaces": [
+    {
+      "port": 11210,
+      "host": "*",
+      "ipv4": "required",
+      "ipv6": "off"
+    },
+    {
+      "port": 11209,
+      "system": true,
+      "host": "*",
+      "ipv4": "required",
+      "ipv6": "off"
+    },
+    {
+      "port": 11207,
+      "tls": true,
+      "host": "*",
+      "ipv4": "required",
+      "ipv6": "off"
+    },
+    {
+      "port": 11206,
+      "system": true,
+      "tls": true,
+      "host": "*",
+      "ipv4": "required",
+      "ipv6": "off"
+    },
+    {
+      "port": 11210,
+      "host": "*",
+      "ipv4": "off",
+      "ipv6": "optional"
+    },
+    {
+      "port": 11209,
+      "system": true,
+      "host": "*",
+      "ipv4": "off",
+      "ipv6": "optional"
+    },
+    {
+      "port": 11207,
+      "tls": true,
+      "host": "*",
+      "ipv4": "off",
+      "ipv6": "optional"
+    },
+    {
+      "port": 11206,
+      "system": true,
+      "tls": true,
+      "host": "*",
+      "ipv4": "off",
+      "ipv6": "optional"
+    }
+  ],
+  "logger": {
+    "filename": "/opt/couchbase/var/lib/couchbase/logs/memcached.log",
+    "cyclesize": 10485760
+  },
+  "max_connections": 65000,
+  "num_auxio_threads": "default",
+  "num_nonio_threads": "default",
+  "num_reader_threads": "default",
+  "num_storage_threads": "default",
+  "num_writer_threads": "default",
+  "privilege_debug": false,
+  "prometheus": {
+    "port": 11280,
+    "family": "inet"
+  },
+  "rbac_file": "/opt/couchbase/var/lib/couchbase/config/memcached.rbac",
+  "root": "/opt/couchbase",
+  "scramsha_fallback_salt": "EpwXubo7x6hCkqfC",
+  "system_connections": 5000,
+  "tracing_enabled": true,
+  "verbosity": 0,
+  "xattr_enabled": true
+}
