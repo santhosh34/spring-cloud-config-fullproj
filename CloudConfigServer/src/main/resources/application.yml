@@ -17,13 +17,8 @@ spring:
             backend: secret
             kvVersion: 2
             authentication: TOKEN
-            token: "hvs.CPNeSjNXR1VOKWNvpRv7i6iV"
+            token: "hvs.W6RaHqLrLPwyTGu3I5A9oxKF"
             order: 1
-          - type: git
-            uri: https://github.com/santhosh34/spring-cloud-config-store.git
-            search-paths:
-              - '{application}/{profile}'
-            order: 2
     bus:
       enabled:  true
       id: my-config-server

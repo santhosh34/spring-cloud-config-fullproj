@@ -1,1 +1,6 @@
+/Users/santhoshkumarnagulanchi/Dev/2.Github/santhosh34/DegaV2/spring-cloud-config-fullproj/CloudConfigServer/src/main/java/com/sannette/eis/mega/repos/CouchbaseEnvironmentRepositoryFactory.java
+/Users/santhoshkumarnagulanchi/Dev/2.Github/santhosh34/DegaV2/spring-cloud-config-fullproj/CloudConfigServer/src/main/java/com/sannette/eis/mega/client/CouchbaseClient.java
 /Users/santhoshkumarnagulanchi/Dev/2.Github/santhosh34/DegaV2/spring-cloud-config-fullproj/CloudConfigServer/src/main/java/com/sannette/eis/mega/CloudConfigServerApplication.java
+/Users/santhoshkumarnagulanchi/Dev/2.Github/santhosh34/DegaV2/spring-cloud-config-fullproj/CloudConfigServer/src/main/java/com/sannette/eis/mega/repos/CouchbaseEnvironmentRepository.java
+/Users/santhoshkumarnagulanchi/Dev/2.Github/santhosh34/DegaV2/spring-cloud-config-fullproj/CloudConfigServer/src/main/java/com/sannette/eis/mega/config/CouchbaseEnvironmentProperties.java
+/Users/santhoshkumarnagulanchi/Dev/2.Github/santhosh34/DegaV2/spring-cloud-config-fullproj/CloudConfigServer/src/main/java/com/sannette/eis/mega/config/CouchbaseEnvironmentRepositoryConfiguration.java

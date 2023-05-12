@@ -83,7 +83,7 @@ docker exec vault  vault kv get secret/producer-application
 -----Diff flow
 docker-compose up -d 
 docker ps
-docker-compose exec vault sh
+docker-compose exec vaultcontainer sh
 $vault operator init
     Error initializing: Error making API request.
     URL: PUT http://127.0.0.1:8200/v1/sys/init
@@ -146,3 +146,13 @@ $
 Lets say if you are accessing from HOST
 
 curl -vik -H "X-Vault-Token: hvs.CPNeSjNXR1VOKWNvpRv7i6iV" http://localhost:8200/v1/cubbyhole/mytestkey
+
+
+New root Key: hvs.W6RaHqLrLPwyTGu3I5A9oxKF
+
+Key1: 
+gDbhUYOGPoPYEtMiT7ypuDK/8OLlYmnbPWfvfV4286o=
+
+hvs.W6RaHqLrLPwyTGu3I5A9oxKF
+
+

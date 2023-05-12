@@ -1,1 +1,9 @@
+com/sannette/eis/mega/config/CouchbaseEnvironmentProperties.class
+com/sannette/eis/mega/config/CouchbaseRepositoryConfiguration.class
+com/sannette/eis/mega/repos/CouchbaseEnvironmentRepository.class
+com/sannette/eis/mega/repos/CouchbaseEnvironmentRepository$1.class
+com/sannette/eis/mega/config/CouchbaseEnvironmentRepositoryConfiguration$CouchbaseFactoryConfig.class
+com/sannette/eis/mega/config/CouchbaseEnvironmentRepositoryConfiguration.class
+com/sannette/eis/mega/client/CouchbaseClient.class
 com/sannette/eis/mega/CloudConfigServerApplication.class
+com/sannette/eis/mega/repos/CouchbaseEnvironmentRepositoryFactory.class
