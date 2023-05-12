@@ -20,11 +20,20 @@ spring:
             token: "hvs.nK0A9JgSk311MTbeMFszz6lG"
             order: 1
           -
+            type: couchbase
+            connectionString: couchbase://127.0.0.1
+            userName: userName1
+            password: Password1
+            configBucketName: configuration-store
+            collectionName: application-properties
+            scope: technical
+            order: 2
+          -
             type: git
             uri: https://github.com/santhosh34/spring-cloud-config-store.git
             search-paths:
               - '{application}/{profile}'
-            order: 2
+            order: 3
     bus:
       enabled: true
       id: my-config-server
@@ -51,5 +60,5 @@ management:
 logging:
   level:
     ROOT: ERROR
-    com.sannette.eis.mega.*: WARN
-    org.apache.kafka.*: WARN
+    com.sannette.eis.mega.*: INFO
+    org.apache.kafka.*: INFO
