@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: product-register
-  config:
-    import: configserver:http://localhost:8888

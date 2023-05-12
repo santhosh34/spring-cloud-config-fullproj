@@ -17,15 +17,16 @@ spring:
             backend: secret
             kvVersion: 2
             authentication: TOKEN
-            token: "hvs.CPNeSjNXR1VOKWNvpRv7i6iV"
+            token: "hvs.nK0A9JgSk311MTbeMFszz6lG"
             order: 1
-          - type: git
+          -
+            type: git
             uri: https://github.com/santhosh34/spring-cloud-config-store.git
             search-paths:
               - '{application}/{profile}'
             order: 2
     bus:
-      enabled:  true
+      enabled: true
       id: my-config-server
       destination: myownmanuallycreatedtopic
     stream:
@@ -50,5 +51,5 @@ management:
 logging:
   level:
     ROOT: ERROR
-    com.sannette.eis.mega.*: INFO
-    org.apache.kafka.*: INFO
+    com.sannette.eis.mega.*: WARN
+    org.apache.kafka.*: WARN
