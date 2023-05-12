@@ -83,7 +83,7 @@ Also we used this same repo in CloudConfigServer application properties as git b
 
 Create Configuration as shown below. Please note that we created a new secret engine with name 'secret' instead of kv and
 no file naming strategy except the application name.
-![Vault Config for Notification Service](../README_DOCs/notification-service-vault-config.png)
+![Vault Config for Notification Service](./docs/notification-service-vault-config.png)
 
 Once vault Server is up and running login to http://localhost:8200/ui/ and proceed with vault key and token setup.
 
@@ -108,21 +108,21 @@ This minimized the number of buckets, scopes and collections for many applicatio
 Login to Couchbase on: http://localhost:8091/ui/index.html as administrator
 1) Create Bucket & Scope & Collection
 2) Create User who can access this collection.  
-ref: ![Couchbase User Permissions](../README_DOCs/couchbase-user-permissions.png)
+ref: ![Couchbase User Permissions](./docs/couchbase-user-permissions.png)
 
 we used the same configuration in CloudConfigServer application properties to connect to couchbase.
 
 Create Configuration of Notification Service in Couchbase as a Document
 Ref:
-a) ![Notification Service Config Location](../README_DOCs/notification-service-config-location.png)
-b) ![Notification Service Config Details](../README_DOCs/notification-service-config-details.png)
+a) ![Notification Service Config Location](./docs/notification-service-config-location.png)
+b) ![Notification Service Config Details](./docs/notification-service-config-details.png)
 
 ### 6. Start the Servers
 
 - Start the CloudConfigServer
 - Start the NotificationService
     - Make sure run the service in dev profile as shown in below
-      ![IDE Config](../README_DOCs/ide_settings.png)
+      ![IDE Config](./docs/ide_settings.png)
 - Start the ProductRegisterService
 - Validation below
     - Config Server On:               http://localhost:8888
@@ -144,7 +144,7 @@ b) ![Notification Service Config Details](../README_DOCs/notification-service-co
 ```
 ### 7. Helpful Postman collection with series of Api Calls to Validate:
 
-![Postman Collection](../README_DOCs/mega.postman_collection.json)
+![Postman Collection](./docs/mega.postman_collection.json)
 
 ### Development Debug Notes:
 
