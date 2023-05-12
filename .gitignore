@@ -28,3 +28,7 @@ hs_err_pid*
 .idea
 build
 logs/*
+
+**/couchbase_data/*
+**/target/*
+KafkaAndVaultDockerCompose/vault/file/*

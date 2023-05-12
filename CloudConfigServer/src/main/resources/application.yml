@@ -3,15 +3,39 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active: composite
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/santhosh34/spring-cloud-config-store.git
-          search-paths:
-            - '{application}/{profile}'
+        composite:
+          -
+            type: vault
+            scheme: http
+            host: 127.0.0.1
+            port: 8200
+            backend: secret
+            kvVersion: 2
+            authentication: TOKEN
+            token: "hvs.nK0A9JgSk311MTbeMFszz6lG"
+            order: 1
+          -
+            type: couchbase
+            connectionString: couchbase://127.0.0.1
+            userName: userName1
+            password: Password1
+            configBucketName: configuration-store
+            collectionName: application-properties
+            scope: technical
+            order: 2
+          -
+            type: git
+            uri: https://github.com/santhosh34/spring-cloud-config-store.git
+            search-paths:
+              - '{application}/{profile}'
+            order: 3
     bus:
-      enabled:  true
+      enabled: true
       id: my-config-server
       destination: myownmanuallycreatedtopic
     stream:
