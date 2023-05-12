@@ -25,8 +25,8 @@ spring:
             userName: userName1
             password: Password1
             configBucketName: configuration-store
-            collectionName: application-properties
             scope: technical
+            collectionName: application-properties
             order: 2
           -
             type: git
