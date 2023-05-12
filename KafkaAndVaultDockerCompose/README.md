@@ -1,6 +1,6 @@
 
 
-# Spring Cloud Config with git, vault and couchbase 
+# Spring Cloud Config with Git, Vault and Couchbase 
 
 ## Objective
 
@@ -85,6 +85,11 @@ Create Configuration as shown below. Please note that we created a new secret en
 no file naming strategy except the application name. 
 ![Vault Config for Notification Service](../README_DOCs/notification-service-vault-config.png)
 
+Once vault Server is up and running login to http://localhost:8200/ui/ and proceed with vault key and token setup. 
+
+Update newly Vault Token in Spring CloudConfigServer Application Properties
+
+
 ### 5. Create Application Configuration in Couchbase ( 3rd backend )
 
 #### Pre-Req:
@@ -105,21 +110,43 @@ no file naming strategy except the application name.
       2) Create User who can access this collection.  
         ref: ![Couchbase User Permissions](../README_DOCs/couchbase-user-permissions.png)
 
-   we used the same configuration in CloudConfigServer to connect to couchbase. 
+   we used the same configuration in CloudConfigServer application properties to connect to couchbase. 
 
    Create Configuration of Notification Service in Couchbase as a Document
       Ref: 
             a) ![Notification Service Config Location](../README_DOCs/notification-service-config-location.png)
             b) ![Notification Service Config Details](../README_DOCs/notification-service-config-details.png)
 
-### 6. Helpful Postman collection with series of Api Calls to Validate: 
+### 6. Start the Servers
 
+- Start the CloudConfigServer
+- Start the NotificationService
+  - Make sure run the service in dev profile as shown in below
+      ![IDE Config](../README_DOCs/ide_settings.png)
+- Start the ProductRegisterService
+- Validation below
+    - Config Server On:               http://localhost:8888
+    - Product Register On:            http://localhost:8081
+    - Notification Server On:         http://localhost:8082
 
+- Config Server Validation
+  - http://localhost:8888/notification-service/stg
+  
+- Notification Service Validation
+  - http://localhost:8082/notification-service/properties/host
 
+- Product Register Service Validation
+    - http://localhost:8081/product-register/properties/host  
 
+- Debug if in case
+```shell
+-Dspring.profiles.active=dev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+```
+### 7. Helpful Postman collection with series of Api Calls to Validate: 
 
+![Postman Collection](../README_DOCs/mega.postman_collection.json)
 
-
+### Development Debug Notes:
 
 Learning how to connect to Kafka Broker running inside docker
 
