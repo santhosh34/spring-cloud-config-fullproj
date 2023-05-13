@@ -137,16 +137,14 @@ b) ![Notification Service Config Details](./docs/notification-service-config-det
 - Validation below
     - Config Server On:               http://localhost:8888
     - Product Register On:            http://localhost:8081
-    - Notification Server On:         http://localhost:8082
+    - Notification Server On:         http://localhost:9091
 
 - Config Server Validation
     - http://localhost:8888/notification-service/stg
-
-- Notification Service Validation
-    - http://localhost:8082/notification-service/properties/host
-
 - Product Register Service Validation
     - http://localhost:8081/product-register/properties/host
+- Notification Service Validation
+  - http://localhost:9091/notification-service/properties/host
 
 - Debug if in case
 ```shell
