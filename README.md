@@ -4,15 +4,22 @@
 
 ## Objective
 
-Creates a Spring Cloud Config Server with three Backends 1) Git 2) Vault 3) Couchbase
-Creates 2 Services 1) Product Register Service 2) Notification Service
+Configuration and Setup of Spring Cloud Config Server with three Backends 1) Git 2) Vault 3) Couchbase
 
-We store required application configurations of Proudct Register And Notification Services in Spring Cloud Config Server.
-We store secured configuration of Product Register and Notifiation Services in Vault
+Two Services to demonstrate how to fetch from config server 
+- Product Register Service 
+- Notification Service
 
-When these two applications are spinning up, application configurations of respective services will be pulled from
+By Keeping required application configurations of Product Register And Notification Services in git & Couchbase And
+Keeping secured configuration in Vault, this repo hot reloads those config props from backends.
+
+Application configurations of respective services will be pulled from
 3 backends git, vault and couchbase and override the properties as per their order of preferences.
 order 1 wins and order N will be ignored for the same attribute if exists in multiple backends.
+
+## Architecture
+
+![Architecture](./docs/spring-cloud-config.jpeg)
 
 ## Repo Usage Guide
 
@@ -117,13 +124,16 @@ Ref:
 a) ![Notification Service Config Location](./docs/notification-service-config-location.png)
 b) ![Notification Service Config Details](./docs/notification-service-config-details.png)
 
-### 6. Start the Servers
+### 6. Start the Services
 
-- Start the CloudConfigServer
-- Start the NotificationService
+- 1. Start the CloudConfigServer
+- 2. Start the NotificationService
     - Make sure run the service in dev profile as shown in below
       ![IDE Config](./docs/ide_settings.png)
-- Start the ProductRegisterService
+- 3. Start the ProductRegisterService
+
+### Validations
+
 - Validation below
     - Config Server On:               http://localhost:8888
     - Product Register On:            http://localhost:8081
