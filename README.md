@@ -57,13 +57,13 @@ Above command will start the following containers
 Create a new topic. This topic will be used as pub-sub for configuration changes from config server to application
 microservices.
 ```
-    $ docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --topic myownmanuallycreatedtopic
+    $ docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --topic manuallycreatedtopic
 ```
 Please note that 'kafka' in the above line is container name that we mentioned in docker-compose.yml
 Few More useful commands:
 ```
     $ docker exec kafka kafka-topics --bootstrap-server kafka:29092 --list
-    $ docker exec kafka kafka-topics --bootstrap-server kafka:29092 --delete --topic myownmanuallycreatedtopic
+    $ docker exec kafka kafka-topics --bootstrap-server kafka:29092 --delete --topic manuallycreatedtopic
 ```
 Kafka properties in CloudConfigServer are default for localhost.
 
@@ -160,6 +160,9 @@ b) ![Notification Service Config Details](./docs/notification-service-config-det
 
   https://cloud.spring.io/spring-cloud-bus/reference/html/#customizing-the-message-broker
 
+Ordering:
+https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#composite-environment-repositories
+
 
 
 ### 10. Development Debug Notes:
@@ -167,7 +170,7 @@ b) ![Notification Service Config Details](./docs/notification-service-config-det
 Learning how to connect to Kafka Broker running inside docker
 
 Create a new topic in container:
-docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --topic myownmanuallycreatedtopic
+docker exec kafka kafka-topics --bootstrap-server kafka:9092 --create --topic manuallycreatedtopic
 
     Here  1st and 3rd 'kafka' words are container name mentioned in docker-compose file.
     2nd kafka word is kafka command. 
@@ -178,8 +181,8 @@ How to list all our topics:
 
 How to delete a specific topics:
 
-    docker exec kafka kafka-topics --delete --zookeeper zookeeper:2181 --topic myownmanuallycreatedtopic
-    docker exec kafka kafka-topics --delete --bootstrap-server kafka:29092 --topic myownmanuallycreatedtopic
+    docker exec kafka kafka-topics --delete --zookeeper zookeeper:2181 --topic manuallycreatedtopic
+    docker exec kafka kafka-topics --delete --bootstrap-server kafka:29092 --topic manuallycreatedtopic
 
 
 How to Stop All Dockers:

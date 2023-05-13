@@ -37,7 +37,7 @@ spring:
     bus:
       enabled: true
       id: my-config-server
-      destination: myownmanuallycreatedtopic
+      destination: manuallycreatedtopic
     stream:
       kafka:
         binder:
