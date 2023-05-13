@@ -14,6 +14,6 @@ public class NotificationConfig {
     private String host;
     private String port;
     private String userName;
-    private String key1;
+    private String password;
 
 }

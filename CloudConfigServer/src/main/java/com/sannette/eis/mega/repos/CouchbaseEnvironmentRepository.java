@@ -11,6 +11,7 @@ import org.springframework.cloud.config.environment.Environment;
 import org.springframework.cloud.config.environment.PropertySource;
 import org.springframework.cloud.config.server.environment.EnvironmentRepository;
 import org.springframework.core.Ordered;
+import org.springframework.vault.support.JsonMapFlattener;
 
 import java.util.Map;
 
@@ -39,9 +40,9 @@ public class CouchbaseEnvironmentRepository implements EnvironmentRepository, Or
 
 
     public Map<String, Object>  getResultMap(GetResult getResult){
-        return  objectMapper.convertValue(getResult.contentAs(JsonNode.class),
+        return JsonMapFlattener.flatten(objectMapper.convertValue(getResult.contentAs(JsonNode.class),
                 new TypeReference<Map<String, Object>>() {
-                });
+                }));
     }
 
     @Override

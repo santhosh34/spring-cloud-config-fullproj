@@ -1,6 +1,5 @@
 package com.sannette.eis.mega.client;
 
-
 import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.Collection;
 import com.sannette.eis.mega.config.CouchbaseEnvironmentProperties;
