@@ -132,7 +132,7 @@ b) ![Notification Service Config Details](./docs/notification-service-config-det
       ![IDE Config](./docs/ide_settings.png)
 - 3. Start the ProductRegisterService
 
-### Validations
+### 7. Validations
 
 - Validation below
     - Config Server On:               http://localhost:8888
@@ -152,11 +152,17 @@ b) ![Notification Service Config Details](./docs/notification-service-config-det
 ```shell
 -Dspring.profiles.active=dev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
 ```
-### 7. Helpful Postman collection with series of Api Calls to Validate:
+### 8. Helpful Postman collection with series of Api Calls to Validate:
 
 ![Postman Collection](./docs/mega.postman_collection.json)
 
-### Development Debug Notes:
+### 9. References
+
+  https://cloud.spring.io/spring-cloud-bus/reference/html/#customizing-the-message-broker
+
+
+
+### 10. Development Debug Notes:
 
 Learning how to connect to Kafka Broker running inside docker
 
