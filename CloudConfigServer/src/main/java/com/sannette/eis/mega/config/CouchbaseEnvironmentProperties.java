@@ -13,7 +13,7 @@ public class CouchbaseEnvironmentProperties implements EnvironmentRepositoryProp
     private String configBucketName;
     private String scope;
     private String collectionName;
-    private int order = Ordered.LOWEST_PRECEDENCE;
+    private int order= Ordered.HIGHEST_PRECEDENCE;
 
     public String getConnectionString() {
         return connectionString;

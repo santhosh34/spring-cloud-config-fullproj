@@ -25,9 +25,9 @@ order 1 wins and order N will be ignored for the same attribute if exists in mul
 
 ### 1. Start all the containers using docker compose
 ```shell
-$ cd KafkaDockerCompose
+$ cd KafkaAndVaultDockerCompose
 $ pwd
-    KafkaDockerCompose
+    <<Path To>>\KafkaAndVaultDockerCompose
 $ docker-compose up -d
 ```
 Above command will start the following containers
