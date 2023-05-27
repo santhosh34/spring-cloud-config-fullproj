@@ -2,21 +2,11 @@ server:
   port: 8888
 spring:
   application:
-    name: config-server
+    name: config-server-dev
   cloud:
     config:
       server:
         composite:
-          -
-            type: vault
-            scheme: http
-            host: 127.0.0.1
-            port: 8200
-            backend: secret
-            kvVersion: 2
-            authentication: TOKEN
-            token: "hvs.nK0A9JgSk311MTbeMFszz6lG"
-            order: 1
           -
             type: couchbase
             connectionString: couchbase://127.0.0.1
@@ -25,13 +15,7 @@ spring:
             configBucketName: configuration-store
             scope: technical
             collectionName: application-properties
-            order: 2
-          -
-            type: git
-            uri: https://github.com/santhosh34/spring-cloud-config-store.git
-            search-paths:
-              - '{application}/{profile}'
-            order: 3
+            order: 1
     bus:
       enabled: true
       id: my-config-server
