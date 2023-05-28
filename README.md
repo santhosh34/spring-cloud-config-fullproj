@@ -126,7 +126,10 @@ b) ![Notification Service Config Details](./docs/notification-service-config-det
 
 ### 6. Start the Services
 
-- 1. Start the CloudConfigServer
+- 1. Start the CloudConfigServer, Please note  that we use dev and compisite profiles together
+  ```
+       java -Dspring.profiles.active=dev,composite  -jar target/cloud-config-server-1.0.0.jar
+  ```
 - 2. Start the NotificationService
     - Make sure run the service in dev profile as shown in below
       ![IDE Config](./docs/ide_settings.png)
